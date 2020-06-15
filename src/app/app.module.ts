@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BackgroundComponent } from './background/background.component';
 import { LocationsComponent } from './locations/locations.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SalariesAndExpensesComponent } from './salaries-and-expenses/salaries-and-expenses.component';
 
 @NgModule({
    declarations: [
@@ -14,7 +15,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
       NavBarComponent,
       BackgroundComponent,
       LocationsComponent,
-      NotFoundComponent
+      NotFoundComponent,
+      SalariesAndExpensesComponent
    ],
    imports: [
       BrowserModule,

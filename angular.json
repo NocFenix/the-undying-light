@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "the-undying-light": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "the-undying-light"
+    }
+  },
+  "defaultProject": "the-undying-light",
+  "cli": {
+    "analytics": "622ca2d8-649d-4ee4-9f1a-67321cd2404a"
+  }
 }
