@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: ALRegular;
+  src: url(assets/fonts/AlienLeagueIiRegular.otf) format("opentype");
+}
+@font-face {
+  font-family: ALItalic;
+  src: url(assets/fonts/AlienLeagueIiItalic.otf) format("opentype");
+}
+@font-face {
+  font-family: ALBold;
+  src: url(assets/fonts/AlienLeagueIiBold.otf) format("opentype");
+}
+@font-face {
+  font-family: ALBoldItalic;
+  src: url(assets/fonts/AlienLeagueIiBoldItalic.otf) format("opentype");
+}
+@font-face {
+  font-family: ALCondensed;
+  src: url(assets/fonts/AlienLeagueIiCondensed.otf) format("opentype");
+}
+@font-face {
+  font-family: ALExpanded;
+  src: url(assets/fonts/AlienLeagueIiExpanded.otf) format("opentype");
+}
+@font-face {
+  font-family: ALExpandedItalic;
+  src: url(assets/fonts/AlienLeagueIiExpandedItalic.otf) format("opentype");
+}
+@font-face {
+  font-family: ALGradient;
+  src: url(assets/fonts/AlienLeagueIiGradient.otf) format("opentype");
+}
+@font-face {
+  font-family: ALGradientBold;
+  src: url(assets/fonts/AlienLeagueIiGradientBold.otf) format("opentype");
+}
+
+@bg-color: #0D0E0E;
+@font-color: #539191;
+@link-color: #0D6E5F;
+
+html {
+  background-color: @bg-color;
+  color: @font-color;
+  font-size: 24px;
+  font-family: ALRegular;
+  margin-left: 25px;
+}
+
+h1 {
+  font-family: ALGradientBold;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+  &:hover {
+    color: @font-color;
+  }
+}
+
+.active-link {
+    color: @font-color;
+}
+
+.character {
+  .avatar {
+    height: 150px;
+    // top right bottom left
+    padding: 0px 12px 0px 0px;
+    float: left;
+  }
+  clear:both;
+  margin-bottom: 25px;
+}
