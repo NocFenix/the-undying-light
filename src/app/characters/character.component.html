@@ -1,0 +1,12 @@
+<h1>{{characterType}} Characters</h1>
+
+<div *ngIf="characters">
+  <div *ngFor="let character of characters">
+    <div class="character">
+      <img class="avatar" src={{character.AvatarUrl}} />
+      <h3>{{character.Name}}</h3>
+      <div class="bio" [innerHTML]='character.Bio'>
+      </div>
+    </div>  
+  </div>
+</div>

@@ -12,6 +12,8 @@ import { TULLocationsComponent } from './the-undying-light/locations/locations.c
 import { TULSalariesAndExpensesComponent } from './the-undying-light/salaries-and-expenses/salaries-and-expenses.component';
 import { HPBPBackgroundComponent } from './helix-pbp/background/background.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { CharacterComponent } from './characters/character.component';
+import { CharacterService } from './services/character.service';
 
 @NgModule({
    declarations: [
@@ -19,6 +21,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       NavBarComponent,
       NotFoundComponent,
       CampaignsComponent,
+      CharacterComponent,
       TULBackgroundComponent,
       TULLocationsComponent,
       TULSalariesAndExpensesComponent,
@@ -27,9 +30,9 @@ import { UnderConstructionComponent } from './under-construction/under-construct
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule
+      AppRoutingModule,
    ],
-   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+   providers: [ CharacterService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
    bootstrap: [
       AppComponent
    ]

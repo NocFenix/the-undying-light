@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ArpgTitleService } from '../services/arpg-title.service';
+import { CampaignService } from '../services/campaign.service';
 
 @Component({
   selector: 'tul-nav-bar',
@@ -8,39 +9,28 @@ import { Title } from '@angular/platform-browser';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private titleService: Title) { }
+  constructor(
+    private campaignSvc: CampaignService,
+    private titleSvc: ArpgTitleService,
+  ) {
 
+  }
+
+  public campaignUrl: string;
   public campaignName: string;
-  public campaignRoute: string;
 
   ngOnInit() {
-    this.titleService.setTitle("NocFenix's Campaigns");
+
   }
 
   public setTitle(route:string) {
-    this.titleService.setTitle(`${this.campaignName} | ${route}`);
+    this.titleSvc.setTitle(this.campaignUrl, route);
   }
 
-  public setCampaign(campaignName:string) {
-    switch (campaignName) {
-      case 'tul':
-        this.campaignName = 'The Undying Light';
-        this.campaignRoute = 'the-undying-light';
-        break;
-      case 'hpbp':
-        this.campaignName = 'Helix Play-by-Post';
-        this.campaignRoute = 'helix-pbp';
-        break;
-      case 'lu':
-        this.campaignName = "Luna Umbra";
-        this.campaignRoute = 'luna-umbra';
-        break;
-      default:
-        this.campaignName = 'Home';
-        this.campaignRoute = '';
-        break;
-    }
-    this.titleService.setTitle(this.campaignName);
+  public setCampaign(campaignUrl:string) {
+    this.campaignUrl = campaignUrl;
+    this.campaignName = this.campaignSvc.getFormattedCampaignFromUrl(this.campaignUrl)
+    this.setTitle('Background');
   }
 
 }

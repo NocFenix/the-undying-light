@@ -2,21 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TULBackgroundComponent } from './the-undying-light/background/background.component';
 import { TULLocationsComponent } from './the-undying-light/locations/locations.component';
-import { TULPcComponent } from './the-undying-light/pc/pc.component';
-import { TULNpcComponent } from './the-undying-light/npc/npc.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TULSalariesAndExpensesComponent } from './the-undying-light/salaries-and-expenses/salaries-and-expenses.component';
 import { HPBPBackgroundComponent } from './helix-pbp/background/background.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { CharacterComponent } from './characters/character.component';
 
 const routes: Routes = [
   { path: 'the-undying-light', children: [
     { path: 'background', component: TULBackgroundComponent },
     { path: 'locations', component: TULLocationsComponent },
     { path: 'characters', children: [
-      { path: 'pc', component: TULPcComponent },
-      { path: 'npc', component: TULNpcComponent },
+      { path: 'pc', component: CharacterComponent },
+      { path: 'npc', component: CharacterComponent },
     ] },
     { path: 'salaries-and-expenses', component: TULSalariesAndExpensesComponent },
   ] },
@@ -44,7 +43,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

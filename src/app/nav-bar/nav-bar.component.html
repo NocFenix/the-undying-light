@@ -2,20 +2,22 @@
 
 <h1>Campaigns<span *ngIf="campaignName">: {{campaignName}}</span></h1>
 <ul>
-  <li><a class="expander" (click)="setCampaign('tul')" [routerLink]="['']">The Undying Light</a></li>
-  <li><a class="expander" (click)="setCampaign('hpbp')" [routerLink]="['']">Helix Play-by-Post</a></li>
-  <li><a class="expander" (click)="setCampaign('lu')" [routerLink]="['']">Luna Umbra (Completed)</a></li>
+  <li><a class="expander" (click)="setCampaign('the-undying-light')" [routerLink]="['the-undying-light', 'background']">The Undying Light</a></li>
+  <li><a class="expander" (click)="setCampaign('helix-pbp')" [routerLink]="['helix-pbp', 'background']">Helix Play-by-Post</a></li>
+  <li><a class="expander" (click)="setCampaign('luna-umbra')" [routerLink]="['luna-umbra', 'background']">Luna Umbra (Completed)</a></li>
 </ul>
 
-<div *ngIf="campaignRoute">
+<div *ngIf="campaignUrl">
   <hr />
   <ul>
-    <li><a (click)='setTitle("Background")' [routerLink]="[campaignRoute, 'background']" routerLinkActive="active-link">Background</a></li>
-    <li><a (click)='setTitle("Locations")' [routerLink]="[campaignRoute, 'locations']" routerLinkActive="active-link">Locations</a></li>
-    <li><a (click)='setTitle("Player Characters")' [routerLink]="[campaignRoute, 'characters','pc']" routerLinkActive="active-link">Player Characters</a></li>
-    <li><a (click)='setTitle("Non-Player Characters")' [routerLink]="[campaignRoute, 'characters','npc']" routerLinkActive="active-link">Non-Player Characters</a></li>
-    <li><a (click)='setTitle("Salaries & Expenses")' [routerLink]="[campaignRoute, 'salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
+    <li><a [routerLink]="[campaignUrl, 'background']" (click)='setTitle("Background")' routerLinkActive="active-link">Background</a></li>
+    <li><a (click)='setTitle("Locations")' [routerLink]="[campaignUrl, 'locations']" routerLinkActive="active-link">Locations</a></li>
+    <li><a (click)='setTitle("Player Characters")' [routerLink]="[campaignUrl, 'characters','pc']" routerLinkActive="active-link">Player Characters</a></li>
+    <li><a (click)='setTitle("Non-Player Characters")' [routerLink]="[campaignUrl, 'characters','npc']" routerLinkActive="active-link">Non-Player Characters</a></li>
+    <li><a (click)='setTitle("Salaries & Expenses")' [routerLink]="[campaignUrl, 'salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
   </ul>
 </div>
 
 <hr>
+
+<router-outlet></router-outlet>
