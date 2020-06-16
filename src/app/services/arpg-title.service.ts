@@ -44,6 +44,7 @@ export class ArpgTitleService {
           title += ` | ${page}`
         break;
       default:
+        title = campaign;
         break;
     }
     this.titleService.setTitle(title);

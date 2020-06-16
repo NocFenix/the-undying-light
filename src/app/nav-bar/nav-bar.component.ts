@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
   public campaignName: string;
 
   ngOnInit() {
-
+    this.titleSvc.setTitle("Campaigns");
   }
 
   public setTitle(route:string) {
