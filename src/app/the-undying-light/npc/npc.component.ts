@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './npc.component.html',
   styleUrls: ['./npc.component.less']
 })
-export class NpcComponent implements OnInit {
+export class TULNpcComponent implements OnInit {
 
   constructor() { }
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'tul-background',
+  selector: 'hpbp-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.less']
 })
-export class BackgroundComponent implements OnInit {
+export class HPBPBackgroundComponent implements OnInit {
 
   constructor() { }
 

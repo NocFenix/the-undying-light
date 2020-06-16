@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.less']
 })
-export class LocationsComponent implements OnInit {
+export class TULLocationsComponent implements OnInit {
 
   constructor() { }
 

@@ -1,13 +1,21 @@
 <hr>
 
-<h1>Alien RPG: The Undying Light</h1>
-
+<h1>Campaigns<span *ngIf="campaignName">: {{campaignName}}</span></h1>
 <ul>
-  <li><a [routerLink]="['/background']" routerLinkActive="active-link">Background</a></li>
-  <li><a [routerLink]="['/locations']" routerLinkActive="active-link">Locations</a></li>
-  <li><a [routerLink]="['/characters/pc']" routerLinkActive="active-link">Player Characters</a></li>
-  <li><a [routerLink]="['/characters/npc']" routerLinkActive="active-link">Non-Player Characters</a></li>
-  <li><a [routerLink]="['/salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
+  <li><a class="expander" (click)="setCampaign('tul')" [routerLink]="['']">The Undying Light</a></li>
+  <li><a class="expander" (click)="setCampaign('hpbp')" [routerLink]="['']">Helix Play-by-Post</a></li>
+  <li><a class="expander" (click)="setCampaign('lu')" [routerLink]="['']">Luna Umbra (Completed)</a></li>
 </ul>
+
+<div *ngIf="campaignRoute">
+  <hr />
+  <ul>
+    <li><a (click)='setTitle("Background")' [routerLink]="[campaignRoute, 'background']" routerLinkActive="active-link">Background</a></li>
+    <li><a (click)='setTitle("Locations")' [routerLink]="[campaignRoute, 'locations']" routerLinkActive="active-link">Locations</a></li>
+    <li><a (click)='setTitle("Player Characters")' [routerLink]="[campaignRoute, 'characters','pc']" routerLinkActive="active-link">Player Characters</a></li>
+    <li><a (click)='setTitle("Non-Player Characters")' [routerLink]="[campaignRoute, 'characters','npc']" routerLinkActive="active-link">Non-Player Characters</a></li>
+    <li><a (click)='setTitle("Salaries & Expenses")' [routerLink]="[campaignRoute, 'salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
+  </ul>
+</div>
 
 <hr>
