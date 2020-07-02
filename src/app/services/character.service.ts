@@ -16,9 +16,20 @@ export class CharacterService {
         else
           return this.undyingLightNPCs;
       case 'helix-pbp':
-        return this.helixPCs;
+        if (isPC)
+          return this.helixPCs;
+        else
+          return this.helixNPCs;
       case 'luna-umbra':
-        return this.lunaUmbraPCs;
+        if (isPC)
+          return this.lunaUmbraPCs;
+        else
+          return this.lunaUmbraNPCs;
+      case 'ferro-outpost':
+        if (isPC)
+          return this.ferroPCs;
+        else
+          return this.ferroNPCs;
       default:
         return null;
     }
@@ -84,22 +95,6 @@ export class CharacterService {
       Name: 'Marshal Jeremy Mathers',
       AvatarUrl: '../../../assets/images/marshal-mathers.jpg',
       Bio: `This documentation is currently classified.`
-    },
-  ]
-
-  private helixPCs: CharacterModel[] = [
-    {
-      Name: '',
-      AvatarUrl: null,
-      Bio: ``
-    },
-  ]
-
-  private lunaUmbraPCs: CharacterModel[] = [
-    {
-      Name: '',
-      AvatarUrl: null,
-      Bio: ``
     },
   ]
 
@@ -181,6 +176,108 @@ export class CharacterService {
       <br />
       By "night", she is an "employee" at Alina's House of Pleasures.
       <br />`
+    },
+  ];
+
+  private helixPCs: CharacterModel[] = [
+    {
+      Name: 'PFC Joanna Kendricks',
+      AvatarUrl: '../../../assets/images/kendricks.png',
+      Bio: `After assaulting her former CO, Joanna was let off easily all things considered; mostly due to the demands of her squad. She was demoted to Private First Class and assigned security duty to the USCSS Pangola, a colonization ship. She knew this meant her military career was mostly finished and she would be living with her son on some backwoods ass planet with a bunch of colonists she didn't know. Joanna refused to give up hope however, she planted a kiss on her son's cryopod and made her way to her own pod on the Pangola. Joanna was determined to give her son a good life, to be there when he needs her and never give up on him or anyone else she would ever care about. Joanna is a survivor and she would survive this....`
+    },
+    {
+      Name: 'Vincent Richmond',
+      AvatarUrl: '../../../assets/images/richmond.png',
+      Bio: `His confidence has taken a good beating after some career misfortunes. He was accepted to the naval academy but dropped out before completing his exams. Then after getting a job piloting a comet ice miner he was involved in the R101 accident where 4 people died. Lost his flight licence after that. Is now looking for a new start on the Helix colony together with his wife Cathy. They were accepted as a family largely due to Cathy being a nurse which was currently in demand. Vincent was slotted in as a junior level comtech. Going back and forth between trying to accept his lot in life and everything that didn't turn out as he once imagined it and on the other hand wishing for a chance to prove himself at something.`
+    }
+  ]
+
+  private helixNPCs: CharacterModel[] = [
+    {
+      Name: '',
+      AvatarUrl: null,
+      Bio: ``
+    },
+  ]
+
+  private lunaUmbraPCs: CharacterModel[] = [
+    {
+      Name: '',
+      AvatarUrl: null,
+      Bio: ``
+    },
+  ]
+
+  private lunaUmbraNPCs: CharacterModel[] = [
+    {
+      Name: '',
+      AvatarUrl: null,
+      Bio: ``
+    },
+  ]
+
+  private ferroPCs: CharacterModel[] = [
+    {
+      Name: 'Captain Anthony Stiles',
+      AvatarUrl: '../../../assets/images/stiles.png',
+      Bio: `Captain Stiles has finally paid off what felt like an almost insurmountable loan for the USCSS Celerity.
+      <br />
+      Luckily, 5 years ago he scored a big contract doing supply runs to a frozen wasteland, black site known as Ferro Outpost.
+      <br />
+      With the loan on the ship paid off, it’s finally time to start making some real money off of these "Ferro Runs."`
+    },
+    {
+      Name: 'Pilot Vanessa Marsh',
+      AvatarUrl: '../../../assets/images/marsh.png',
+      Bio: `Marsh has been under the command of Captain Stiles for nearly 7 years, from even before the first "Ferro Run."
+      <br />
+      Shortly after Captain Stiles scored the contract to do the Ferro supply runs, Marsh was approached by a company agent.
+      <br />
+      She was told that for simply keeping an eye on the crew of the Celerity, and reporting anything fishy, she'd be well paid, all under the table.
+      <br />
+      If anything suspicious, or untoward happens while the crew is at Ferro Outpost, Weyland-Yutani has offered Marsh an excessive bonus to help keep it under-wraps.`
+    },
+    {
+      Name: 'Engineer Gretta Higgins',
+      AvatarUrl: '../../../assets/images/higgins.png',
+      Bio: `
+      Higgins joined Captain Stiles crew 4 years ago after getting recruited to be the ship's head engineer.
+      <br />
+      She leapt on the opportunity when she heard that the Celerity does regular runs to Ferro Outpost, where her boyfriend resides.
+      <br />
+      Now she always looks forward to the visits with her boyfriend Val Smith, who is a Data Scientist at Ferro.`,
+    },
+    {
+      Name: 'Engineer Max Baker',
+      AvatarUrl: '../../../assets/images/baker.png',
+      Bio: `
+      Just a few years ago word came out about a nuclear meltdown, possibly due to UPP sabotage, at the LV-426 facility.
+      <br />
+      This news hit Baker hard, since his remaining family had been sent to the "Shake'n'Bake" colony there, and would have perished with Hadley's Hope.
+      <br />
+      Since then, booze and the ability to be constantly working has kept Baker moving forward.
+      <br />
+      With the loss of his family, however, Baker found a new one among the crew of the Celerity, whom he would do anything for.`
+    },
+    {
+      Name: 'Science Officer Alex Vask',
+      AvatarUrl: '../../../assets/images/vask.png',
+      Bio: `
+      Science Officer Vask was an up-and-coming Xenobiologist, with a study focus on "The Swarm" which has been plaguing certain Outer Rim territories.
+      <br />
+      Weyland-Yutani, however, undercut all of Vask's reseach, leaving him high and dry, and short on funds after taking his research.
+      <br />
+      The sting of that blow still holds sway over Vask, and since he has focused on trying to dig up any dirt he can on the Company to get back at them.
+      <br />
+      Joining Captain Stiles crew, with the ability to visit Weyland-Yutani top secret facilities was a no-brainer; now he just has to find something worthwhile to use.`
+    },
+  ];
+
+  private ferroNPCs: CharacterModel[] = [
+    {
+      Name: '',
+      AvatarUrl: null,
+      Bio: ``
     },
   ];
 

@@ -4,10 +4,13 @@ import { TULBackgroundComponent } from './the-undying-light/background/backgroun
 import { TULLocationsComponent } from './the-undying-light/locations/locations.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TULSalariesAndExpensesComponent } from './the-undying-light/salaries-and-expenses/salaries-and-expenses.component';
-import { HPBPBackgroundComponent } from './helix-pbp/background/background.component';
+import { HelixPBPBackgroundComponent } from './helix-pbp/background/background.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { CharacterComponent } from './characters/character.component';
+import { FerroBackgroundComponent } from './ferro-outpost/background/background.component';
+import { FerroLocationsComponent } from './ferro-outpost/locations/locations.component';
+import { HelixPBPLocationsComponent } from './helix-pbp/locations/locations.component';
 
 const routes: Routes = [
   { path: 'the-undying-light', children: [
@@ -20,10 +23,10 @@ const routes: Routes = [
     { path: 'salaries-and-expenses', component: TULSalariesAndExpensesComponent },
   ] },
   { path: 'helix-pbp', children: [
-    { path: 'background', component: UnderConstructionComponent },
-    { path: 'locations', component: UnderConstructionComponent },
+    { path: 'background', component: HelixPBPBackgroundComponent },
+    { path: 'locations', component: HelixPBPLocationsComponent },
     { path: 'characters', children: [
-      { path: 'pc', component: UnderConstructionComponent },
+      { path: 'pc', component: CharacterComponent },
       { path: 'npc', component: UnderConstructionComponent },
     ] },
     { path: 'salaries-and-expenses', component: UnderConstructionComponent },
@@ -35,7 +38,14 @@ const routes: Routes = [
       { path: 'pc', component: UnderConstructionComponent },
       { path: 'npc', component: UnderConstructionComponent },
     ] },
-    { path: 'salaries-and-expenses', component: UnderConstructionComponent },
+  ] },
+  { path: 'ferro-outpost', children: [
+    { path: 'background', component: FerroBackgroundComponent },
+    { path: 'locations', component: FerroLocationsComponent },
+    { path: 'characters', children: [
+      { path: 'pc', component: CharacterComponent },
+      { path: 'npc', component: CharacterComponent },
+    ] },
   ] },
   { path: '404', component: NotFoundComponent },
   { path: '', component: CampaignsComponent },

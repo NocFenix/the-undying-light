@@ -37,6 +37,7 @@
 }
 
 @bg-color: #0D0E0E;
+@icon-bg-color: #0A1C1B;
 @font-color: #539191;
 @link-color: #0D6E5F;
 
@@ -65,14 +66,22 @@ a {
 }
 
 .character {
+  background-color: @icon-bg-color;
+  border: @font-color solid 1px;
+  clear:both;
+  margin-bottom: 25px;
+  padding: 15px;
+  min-height: 160px;
   .avatar {
     height: 150px;
     // top right bottom left
     padding: 0px 12px 0px 0px;
     float: left;
   }
-  clear:both;
-  margin-bottom: 25px;
+}
+
+.ship-name {
+  font-style: italic;
 }
 
 .expander {

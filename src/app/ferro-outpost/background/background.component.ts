@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hpbp-background',
+  selector: 'fof-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.less']
 })
-export class HelixPBPBackgroundComponent implements OnInit {
+export class FerroBackgroundComponent implements OnInit {
 
   constructor() { }
 

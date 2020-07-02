@@ -1,10 +1,11 @@
 <hr>
 
-<h1>Campaigns<span *ngIf="campaignName">: {{campaignName}}</span></h1>
+<h1>Campaigns<span *ngIf="campaignName" [innerHTML]='campaignName'></span></h1>
 <ul>
-  <li><a class="expander" (click)="setCampaign('the-undying-light')" [routerLink]="['the-undying-light', 'background']">The Undying Light</a></li>
-  <li><a class="expander" (click)="setCampaign('helix-pbp')" [routerLink]="['helix-pbp', 'background']">Helix Play-by-Post</a></li>
-  <li><a class="expander" (click)="setCampaign('luna-umbra')" [routerLink]="['luna-umbra', 'background']">Luna Umbra (Completed)</a></li>
+  <li><a class="expander" (click)="setCampaign('the-undying-light')" [routerLink]="['the-undying-light', 'background']"><i class="far fa-sun"></i> The Undying Light</a></li>
+  <li><a class="expander" (click)="setCampaign('helix-pbp')" [routerLink]="['helix-pbp', 'background']"><i class="fas fa-dna"></i> Helix Play-by-Post</a></li>
+  <li><a class="expander" (click)="setCampaign('luna-umbra')" [routerLink]="['luna-umbra', 'background']"><i class="fas fa-moon"></i> Luna Umbra (Completed)</a></li>
+  <li><a class="expander" (click)="setCampaign('ferro-outpost')" [routerLink]="['ferro-outpost', 'background']"><i class="fas fa-parachute-box"></i> Ferro Outpost (Cinematic)</a></li>
 </ul>
 
 <div *ngIf="campaignUrl">
@@ -14,7 +15,7 @@
     <li><a (click)='setTitle("Locations")' [routerLink]="[campaignUrl, 'locations']" routerLinkActive="active-link">Locations</a></li>
     <li><a (click)='setTitle("Player Characters")' [routerLink]="[campaignUrl, 'characters','pc']" routerLinkActive="active-link">Player Characters</a></li>
     <li><a (click)='setTitle("Non-Player Characters")' [routerLink]="[campaignUrl, 'characters','npc']" routerLinkActive="active-link">Non-Player Characters</a></li>
-    <li><a (click)='setTitle("Salaries & Expenses")' [routerLink]="[campaignUrl, 'salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
+    <li *ngIf='hasSalaries'><a (click)='setTitle("Salaries & Expenses")' [routerLink]="[campaignUrl, 'salaries-and-expenses']" routerLinkActive="active-link">Salaries and Expenses</a></li>
   </ul>
 </div>
 
