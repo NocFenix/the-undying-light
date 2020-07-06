@@ -1,7 +1,7 @@
 <img src="../../assets/images/undying-light-splash.png" />
 
-<div>
-  <h1>Introduction</h1>
+<h1 class="expander" (click)="toggleShowIntro()">Introduction</h1>
+<div *ngIf="showIntro">
   “Some people, they say that they fear what lies in the darkness, hiding in the deep shadows waiting for them. News of incidents across the Frontier and Outer Rim talk of monsters and aliens; corporate sabotage and cover-ups; of UA on UPP hostilies.
   <br />
   <br />
@@ -22,4 +22,68 @@
   <br />
   <br />
   <span class="signature">- Colony Administrator, Leif Grausman</span>
+  <br /><br />
+</div>
+
+<h1 class="expander" (click)="toggleShowStory()">The Story So Far</h1>
+<div *ngIf="showStory">
+  <div class="video-links">
+    <h3>Session 1: Welcome to Devil's Peak</h3>
+    <span class="session-date">Ran on Saturday June 13, 2020</span>
+    <ul class="stacked">
+      <li>
+        <a href="https://youtu.be/Y_AVgnM1O9o" target="_blank">MacCrawInTheJaw (Sean Bravo)</a>
+      </li>
+      <li>
+        <a href="https://youtu.be/qq8vVK3wrlw" target="_blank">NocFenix (GM: Contains Spoilers!)</a>
+      </li>
+    </ul>
+  </div>
+  Our story follows a group of individuals who have been sent to relieve the old crew tasked with maintaining Devil's Peak colony for Seegson.
+  Some of these people were already well acquainted and part of a ship's crew; others are complete strangers to each other.
+  <br /><br />
+  After receiving a tour from the previous Colony Administrator, our group was left to their own devices, including deciding who should be the primary overseer of the colony.
+  Deciding to take charge, Captain Sean Bravo, now Colony Adminstrator Sean Bravo, first tasked out everybody's jobs, pay, and housing in the APOLLO mainframe.
+  <br /><br />
+  After repairing a WY-37A Cargo Lifter Transport Sled, Pilot Sorensen and Mechanic Bolt took a joy-ride in the Sled and did a flyby of the area to get a feel for their new home.
+  During the flyby, they noticed buried in the sands on the other side of the mountain range a Weyland-Yutani ship of some kind.
+
+  <div class="video-links">
+    <h3>Session 2: Uninvited Guests</h3>
+    <span class="session-date">Ran on Saturday June 20, 2020</span>
+    <ul class="stacked">
+      <!-- <li>
+        <a href="https://youtu.be/Y_AVgnM1O9o" target="_blank">MacCrawInTheJaw (Sean Bravo)</a>
+      </li> -->
+      <li>
+        <a href="https://youtu.be/akt_leoy2cc" target="_blank">(1/2) NocFenix (GM: Contains Spoilers!)</a>
+      </li>
+      <li>
+        <a href="https://youtu.be/RqmEPYOOw6o" target="_blank">(2/2) NocFenix (GM: Contains Spoilers!)</a>
+      </li>
+    </ul>
+  </div>
+
+  Before being able to properly explore the find, the group had a run in with some heavily armed mercenaries who landed and demanded five million in cash as protection money.
+  <br /><br />
+  During a "civil" discussion with the leader of this group, Sean eventually turned them away and kept the money for himself. Their captain left quickly after that, seeming quite disappointed.
+  Sean however, is hoping that with the $5 million, plus some hacking espionage done by Zoe and Hana XIII, will keep things in the colony's favor.
+  <br /><br />
+  With that loose end tied up, the group set out to explore the wreckage in the sands. Inside they encountered a crazed 15 year old girl who attacked them, and nearly killed Marshal Mathers.
+  Bolt went his own way, and soon realized in his haste that he'd been exposed to high levels of radiation.
+  After evacuating with Hana XIII, Bolt and her waited for the group to pick them up and bring them back to the colony, where the others had gone to get treatment for the Marshal.
+  
+  <div class="video-links">
+    <h3>Session 3: The Network</h3>
+    <span class="session-date">Will run on Saturday July 11, 2020</span>
+    <ul class="stacked">
+      <!-- <li>
+        <a href="https://youtu.be/Y_AVgnM1O9o" target="_blank">MacCrawInTheJaw (Sean Bravo)</a>
+      </li> -->
+      <!-- <li>
+        <a href="https://youtu.be/akt_leoy2cc" target="_blank">(1/2) NocFenix (GM: Contains Spoilers!)</a>
+      </li> -->
+    </ul>
+  </div>
+
 </div>

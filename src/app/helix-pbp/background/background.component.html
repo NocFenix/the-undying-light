@@ -1,7 +1,7 @@
 <img src="../../assets/images/helix-splash.png" />
 
-<div>
-  <h1>Introduction</h1>
+<h1 class="expander" (click)="toggleShowIntro()">Introduction</h1>
+<div *ngIf="showIntro">
   Called Helix because it falls within the binary star system of NN3503, Helix 4 is a harsh mistress with fluctuating temperatures. With an 18 hour rotation, combined with an axis tilt towards its brightly burning blue and white stars, the poles of Helix 4 either constantly receive light (in the North) or shadow (in the South), while the regions near the equator see regular daylight upwards of 15 hours. The general climate is tropical, with a breathable, yet sweltering, high humidity atmosphere.
   <br /><br />
   Because of the worries of mental health issues resulting from the extremes in the night and day cycle, original plans to colonize the planet had been put on hold when it was first discovered, despite the breathable atmosphere. However, recently, the USS Science Exploratory Vessel Aggrand discovered rich deposits on Neodymium and Uranium.
@@ -10,8 +10,8 @@
   <br /><br />
 </div>
 
-<div>
-  <h1>The Story So Far</h1>
+<h1 class="expander" (click)="toggleShowStory()">The Story So Far</h1>
+<div *ngIf="showStory">
   The crew of <span class="ship-name">USCSS Pangola</span> has awakened from cryo to the surprise destination. First readouts show the planet to be a paradise. However, there is nearby, silent, USS Science Vessel, the <span class="ship-name">Aggrand</span> which, after some successful hacking, revealed that some kind of infectious parasite
   had infected certain ground team investigation members. They also reported some kind of hive that had originally been thought to be the ruins of an ancient civiliation. These now bring up concerns about whether or not Captain Pike should follow company orders and land on Helix.
   <br /><br />
@@ -24,4 +24,5 @@
   With a recently verified breathable atmosphere, and fresh, nearby water source, our crew has to decide what to do next, but at least they now have so "breathing" room.
   <br /><br />
   Transmissions have been received from a downed <span class="ship-name">Aggrand EEV</span> with signs of 5 possible survivors. Perhaps these survivors will have the answers that Captain Pike has been looking for.
+  <br /><br />
 </div>

@@ -44,7 +44,7 @@ const routes: Routes = [
     { path: 'locations', component: FerroLocationsComponent },
     { path: 'characters', children: [
       { path: 'pc', component: CharacterComponent },
-      { path: 'npc', component: CharacterComponent },
+      { path: 'npc', component: UnderConstructionComponent },
     ] },
   ] },
   { path: '404', component: NotFoundComponent },

@@ -12,4 +12,14 @@ export class TULBackgroundComponent implements OnInit {
   ngOnInit() {
   }
 
+  public showIntro: boolean = true;
+  toggleShowIntro() {
+    this.showIntro = !this.showIntro;
+  }
+
+  public showStory: boolean = true;
+  toggleShowStory() {
+    this.showStory = !this.showStory;
+  }
+
 }
