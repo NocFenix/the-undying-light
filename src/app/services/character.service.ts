@@ -189,7 +189,12 @@ export class CharacterService {
       Name: 'Vincent Richmond',
       AvatarUrl: '../../../assets/images/richmond.png',
       Bio: `His confidence has taken a good beating after some career misfortunes. He was accepted to the naval academy but dropped out before completing his exams. Then after getting a job piloting a comet ice miner he was involved in the R101 accident where 4 people died. Lost his flight licence after that. Is now looking for a new start on the Helix colony together with his wife Cathy. They were accepted as a family largely due to Cathy being a nurse which was currently in demand. Vincent was slotted in as a junior level comtech. Going back and forth between trying to accept his lot in life and everything that didn't turn out as he once imagined it and on the other hand wishing for a chance to prove himself at something.`
-    }
+    },
+    {
+      Name: 'Kyle Schmidt',
+      AvatarUrl: '../../../assets/images/kyle-schmidt.png',
+      Bio: `A loyal Weyland-Yutani employee, Kyle spent years living a good life for himself until he was forced to spend most of his savings to pay off his desperate brother’s debts to a drug dealer. In need of cash, Kyle signed on to serve as the company’s liaison on the USCSS Pangola to set up a new colony on the Frontier for W-Y. Although he wasn’t too keen on having to leave behind his home for what could be a decade of his life, W-Y needed someone to protect their investment and it paid good money. And in his line of work, money talks.`
+    },
   ]
 
   private helixNPCs: CharacterModel[] = [
