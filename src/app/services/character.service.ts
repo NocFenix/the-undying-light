@@ -38,6 +38,7 @@ export class CharacterService {
   private undyingLightPCs: CharacterModel[] = [
     {
       Name: 'Captain Sean Bravo',
+      Position: 'Colony Administrator',
       AvatarUrl: '../../../assets/images/sean-bravo.png',
       Bio: `"Back in '82, I was the cap'n of the best, fastest, coolest ship on the Frontier. My good buddy Sorensen, Zoe, Monroe... man, we were the GOATs. Makin' so much moolah, bangin' babes between destinations, and gettin' higher than a kite on the 4th of July. That was the life. Boy do I wish I could go back in time. The Frontier could've been mine.
       <br />
@@ -49,6 +50,7 @@ export class CharacterService {
     },
     {
       Name: 'Jason Sorensen',
+      Position: 'Pilot',
       AvatarUrl: '../../../assets/images/jason-sorenson.png',
       Bio: `Best known for his skills as a medevac pilot, Sorensen later applied for CAS sorties after the battle of Jureen. He garnered admiration with the USCMC ground troops he protected. Attempts to stifle his smug satisfaction with this knowledge by his superiors all failed. Remembered as one of the ace pilots from the Corps, Captain Sorensen left the USCMC with honorable discharge after serving four tours. This came at his own request, as he saw a business opportunity with his friend Sean Bravo.
       <br />
@@ -60,6 +62,7 @@ export class CharacterService {
     },
     {
       Name: 'Zoe Price',
+      Position: 'Medical Personnel',
       AvatarUrl: '../../../assets/images/zoe-price.png',
       Bio: `Zoe's parents were working for Weyland Yutani. However she escaped/got kicked out from home after she turned her dying grandpa into a Zombie. She is obsessed with experimenting on living creatures, humans, animals, and aliens maybe.
       <br />
@@ -71,21 +74,26 @@ export class CharacterService {
     },
     {
       Name: 'Adam Baker',
+      Position: 'Company Liaison',
       AvatarUrl: '../../../assets/images/adam-baker.png',
       Bio: `Adam grew up in a family of roughnecks who worked themselves to the bone everyday just to barely scrape by, and he never understood it. No matter how little his parents made, they never chose to do anything else with there lives. They were always content to just get through the day and waste their hard-earned cash at the bar, drowning their frustrations in cans of Aspen. Desperate to avoid the same fate, Adam studied business at school as he grew older in attempts to one day land a well-paying job. His hard work payed off when he landed a internship and eventually, employment, at Seegson. Desperate to impress, Adam prided himself on performing anything that was asked of him, behavior that was very much appreciated by his bosses. As a result, Adam quickly climbed the corporate ladder to become a corporate executive. Eventually, he was given an assignment to oversee the colony Devil’s Peak after the previous agent had resigned for reasons not disclosed to him. He happily accepted, believing that it be a nice change of scenery, and could land him another promotion.`
     },
     {
       Name: 'Hana XIII',
+      Position: 'Security Personnel',
       AvatarUrl: '../../../assets/images/hana-xiii.png',
       Bio: `Hana's are military/pleasure models, they became popular with executives for both reasons. Designed by Hana Takahashi who took Hana I as her wife after going in a new direction with the original design behind them, which was to manage the stresses and loneliness of deep space exploration. The models enable a can literally have a beautiful women or man next to them in bed and show off at functions etc. The problem that happened is some people actually feel in love with their models, leading to lost contracts. As a result Hana's are barley kept in use on many lower tiers of space travel. They now exist by virtue of the executives and high rank socialites that still love them. In modern days they are the domain of executives instead of the colonists/truckers they were created for.`
     },
     {
       Name: 'Roy "Bolt" Stark',
+      Position: 'Maintenance Personnel',
       AvatarUrl: '../../../assets/images/roy-bolt-stark.png',
       Bio: `A roughneck mechanic who was an ex-prisoner and finished a successful rehabilitation and reintegration and decided to start a new life in Devil's Peak colony, far away from people that might know him and his background. Being among strangers for him feels like freedom. He lost his right arm and now has a prosthetic arm as a replacement. Roy was imprisoned for 25 years in a maximum security prison on LV-666, he paid for his sins dearly and his right arm is a constant reminder of his past. Roy got a son just after he got in prison he never seen him in person, the only thing he has is his baby photo.`
     },
     {
       Name: 'Pvt. Nile Raine',
+      Position: 'Security Personnel',
+      Status: 'AWOL',
       AvatarUrl: '../../../assets/images/nile-raine.jpg',
       Bio: `Named after the African river, Nile grew up among colonists and was restless to get away from the crowded environment. At the first opportunity, he joined the Marine Corps and excelled through the training. His positive demeanor and ability to keep soldiers cool in a fight helped rise him up to 1st Lieutenant.
       <br />
@@ -93,8 +101,12 @@ export class CharacterService {
     },
     {
       Name: 'Marshal Jeremy Mathers',
+      Position: 'US Marshal',
+      Status: 'Deceased',
       AvatarUrl: '../../../assets/images/marshal-mathers.jpg',
-      Bio: `This documentation is currently classified.`
+      Bio: `Background documentation is currently classified.
+      <br />
+      Marshal Mathers became infected with a currently unknown contagion which subsequently led to his demise.`
     },
   ]
 

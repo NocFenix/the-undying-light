@@ -4,7 +4,9 @@
   <div *ngFor="let character of characters">
     <div class="character">
       <img class="avatar" src={{character.AvatarUrl}} />
-      <h3>{{character.Name}}</h3>
+      <h3 class="name">{{character.Name}}</h3>
+      <h4 *ngIf="character.Position">{{character.Position}}</h4>
+      <h4 class="status" *ngIf="character.Status">Current Status: {{character.Status}}</h4>
       <div class="bio" [innerHTML]='character.Bio'>
       </div>
     </div>  
