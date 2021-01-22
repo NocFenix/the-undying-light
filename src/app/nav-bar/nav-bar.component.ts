@@ -18,6 +18,7 @@ export class NavBarComponent implements OnInit {
 
   public campaignUrl: string;
   public campaignName: string;
+  public isStory: boolean = false;
   public hasSalaries: boolean = false;
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class NavBarComponent implements OnInit {
   public setCampaign(campaignUrl:string) {
     this.campaignUrl = campaignUrl;
     this.campaignName = this.campaignSvc.getFormattedCampaignFromUrl(this.campaignUrl);
+    this.isStory = this.campaignSvc.getIsStory(this.campaignUrl);
     this.hasSalaries = this.campaignSvc.getHasSalaries(this.campaignUrl);
     this.setTitle('Background');
   }

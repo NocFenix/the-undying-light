@@ -11,6 +11,7 @@ import { CharacterComponent } from './characters/character.component';
 import { FerroBackgroundComponent } from './ferro-outpost/background/background.component';
 import { FerroLocationsComponent } from './ferro-outpost/locations/locations.component';
 import { HelixPBPLocationsComponent } from './helix-pbp/locations/locations.component';
+import { DarkEdgeStoryComponent } from './dark-edge-of-space/story/story.component';
 
 const routes: Routes = [
   { path: 'the-undying-light', children: [
@@ -46,6 +47,9 @@ const routes: Routes = [
       { path: 'pc', component: CharacterComponent },
       { path: 'npc', component: UnderConstructionComponent },
     ] },
+  ] },
+  { path: 'dark-edge', children: [
+    { path: 'story', component: DarkEdgeStoryComponent }
   ] },
   { path: '404', component: NotFoundComponent },
   { path: '', component: CampaignsComponent },

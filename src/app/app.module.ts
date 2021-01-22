@@ -17,6 +17,8 @@ import { CharacterComponent } from './characters/character.component';
 import { CharacterService } from './services/character.service';
 import { FerroBackgroundComponent } from './ferro-outpost/background/background.component';
 import { FerroLocationsComponent } from './ferro-outpost/locations/locations.component';
+import { DarkEdgeStoryComponent } from './dark-edge-of-space/story/story.component';
+import { CookieService } from 'ngx-cookie-service'
 
 @NgModule({
    declarations: [
@@ -33,12 +35,13 @@ import { FerroLocationsComponent } from './ferro-outpost/locations/locations.com
       UnderConstructionComponent,
       FerroBackgroundComponent,
       FerroLocationsComponent,
+      DarkEdgeStoryComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
    ],
-   providers: [ CharacterService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+   providers: [ CookieService, CharacterService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
    bootstrap: [
       AppComponent
    ]

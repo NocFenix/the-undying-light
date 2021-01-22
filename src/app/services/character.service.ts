@@ -93,11 +93,14 @@ export class CharacterService {
     {
       Name: 'Pvt. Nile Raine',
       Position: 'Security Personnel',
-      Status: 'AWOL',
+      Status: 'Deceased',
       AvatarUrl: '../../../assets/images/nile-raine.jpg',
       Bio: `Named after the African river, Nile grew up among colonists and was restless to get away from the crowded environment. At the first opportunity, he joined the Marine Corps and excelled through the training. His positive demeanor and ability to keep soldiers cool in a fight helped rise him up to 1st Lieutenant.
       <br />
-      That all came crashing down, when he refused to fire on enemy colonists and assaulted his commanding officer. Demoted to Private, he has been shipped off to the mining colony Hells Peak as punishment to serve as Security there. Niles begrudgingly accepts the assignment, all the way, not regretting his actions at all.`
+      That all came crashing down, when he refused to fire on enemy colonists and assaulted his commanding officer. Demoted to Private, he has been shipped off to the mining colony Hells Peak as punishment to serve as Security there. Niles begrudgingly accepts the assignment, all the way, not regretting his actions at all.
+      <br />
+      Unfortunately Pvt. Raine met his demise trying to single-handedly take on the spider infestation in the Devil's Peak ATCC.
+      `
     },
     {
       Name: 'Marshal Jeremy Mathers',

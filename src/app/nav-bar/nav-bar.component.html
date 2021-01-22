@@ -7,9 +7,10 @@
     <li class="nav"><a class="expander" (click)="setCampaign('helix-pbp')" [routerLink]="['helix-pbp', 'background']"><i class="fas fa-dna"></i> Helix Play-by-Post</a></li>
     <li class="nav"><a class="expander" (click)="setCampaign('luna-umbra')" [routerLink]="['luna-umbra', 'background']"><i class="fas fa-moon"></i> Luna Umbra (Completed)</a></li>
     <li class="nav"><a class="expander" (click)="setCampaign('ferro-outpost')" [routerLink]="['ferro-outpost', 'background']"><i class="fas fa-parachute-box"></i> Ferro Outpost (Cinematic)</a></li>
+    <li class="nav"><a class="expander" (click)="setCampaign('dark-edge')" [routerLink]="['dark-edge', 'story']"><i class="fas fa-user-astronaut"></i> Dark Edge of Space (Story)</a></li>
   </ul>
   
-  <div *ngIf="campaignUrl">
+  <div *ngIf="campaignUrl && !isStory">
     <hr />
     <ul>
       <li class="nav"><a [routerLink]="[campaignUrl, 'background']" (click)='setTitle("Background")' routerLinkActive="active-link">Background</a></li>

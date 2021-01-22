@@ -16,12 +16,19 @@ export class ArpgTitleService {
     switch (titleSegments[0]) {
       case 'The Undying Light':
         title = 'the-undying-light';
+        break;
       case 'Helix Play-by-Post':
         title = 'helix-pbp';
+        break;
       case 'Luna Umbra':
-        return 'luna-umbra';
+        title = 'luna-umbra';
+        break;
       case 'Ferro Outpost':
-          return 'ferro-outpost';
+        title = 'ferro-outpost';
+        break;
+      case 'Dark Edge of Space':
+        title = 'dark-edge';
+        break;
       default:
         break;
     }
@@ -49,6 +56,12 @@ export class ArpgTitleService {
         title = 'Ferro Outpost';
         if (page)
           title += ` | ${page}`;
+        break;
+      case 'dark-edge':
+        title = 'Dark Edge of Space';
+        // if (page)
+        //   title += ` | ${page}`;
+        break;
       default:
         title = campaign;
         break;

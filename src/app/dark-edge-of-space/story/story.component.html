@@ -1,0 +1,350 @@
+<!-- <img src="../../assets/images/dark-edge-splash.png" /> -->
+
+<h4 class="expander" (click)="toggleShowCookieNotice()"><i class="fas fa-info-circle"></i></h4>
+<div *ngIf="showCookieNotice" class="cookie-notice">
+    This Story uses Cookies to save your progress. By participating in this story, you agree to allow this site to store Cookies on your browser.
+    <br />
+    These Cookies are solely used for tracking your actions in the story, and will not collect any personal identifying information.
+</div>
+
+<h1 class="expander" (click)="toggleShowIntro()">Introduction</h1>
+<div *ngIf="showIntro">
+    Welcome to The Dark Edge of Space, an <span class="ship-name">Alien</span> based horror-adventure story. 
+    In this Story you will take on the role of either Yessa or Jern Devash, a crew member on the <span class="ship-name">USSEV Bronze Pilgrim</span>.
+    <br />
+    You will be able to choose your character, collect gear, and make choices that impact the story as you read through it. 
+    <br /><br />
+    Just be sure to choose carefully as the lives of Yessa and Jern hang upon the path you take! 
+</div>
+
+<h3 class="expander" (click)="restartStory()" *ngIf="storyStarted"><i class="fas fa-redo-alt"></i> Restart Story</h3>
+
+<h1 class="expander" (click)="toggleShowSection(0)">Prologue</h1>
+<div *ngIf="showPrologue">
+    With a low hum the bright white overhead lighting kicks on, illuminating the sterile cryochamber. 
+    Another hum, mechanical this time, resounds through the chamber as the eight cryopods crack their seals and lift open, revealing the nearly naked bodies of the six sleeping crew members.
+    Inside the pods are the crew of <span class="ship-name">USSEV Bronze Pilgrim</span>:
+    <br /> - Captain Gregory Schmidt
+    <br /> - Warrant Officer Robert Pho
+    <br /> - Navigations Officer Yessa Devash
+    <br /> - Chief Engineer Jern Devash
+    <br /> - Engineer Aleena Kole
+    <br /> - Science Officer Paulette Van
+    <br /><br />
+    The small crew of the ship have only been together for a short time, Weyland-Yutani corporation having pulled them from different assignments to work together on the <span class="ship-name">Bronze Pilgrim</span>, a Science Exploratory Vessel. 
+    The mission of the the <span class="ship-name">Bronze Pilgrim</span> is to head out into the dark edge of known space, and beyond, to discover new worlds for Weyland-Yutani colonization efforts. 
+    In addition to the search for new worlds, the crew has been told to be vigilant for any xenomorph, alien, lifeforms while investigating these previously unexplored regions. 
+    <br /><br />
+    Slowly sitting up and stretching, you can hear your joints pop and crack. 
+    A yawn breaks free from your parched throat as you stretch, fingers brushing the glass of the cryopod door above you. 
+    The cold air sends goosebumps raising across your entire, nearly naked body, and your breath puffs visibily in the air before you. 
+    After rubbing the crusty residue from the corner of your eyes you twist in the pod to look over at your twin.
+
+    <div class="video-links">
+        <h3>Whose Story Do You Want To Guide?</h3>
+        <span *ngIf="!characterName">
+            <a (click)="setCharacter('Yessa')">Yessa</a> or <a (click)="setCharacter('Jern')" >Jern</a>
+        </span>
+        <span *ngIf="characterName">
+            <i class="fas fa-check-square"></i>&nbsp;{{characterName}}
+        </span>
+    </div>
+
+    <div *ngIf="characterName">
+        "Morning, little {{siblingGender == 'f' ? 'brother' : 'sister'}}", {{siblingName}} says with a shiver. "Holy shit, is it just me or is it colder than normal?"
+        <br /><br />
+        "Yeah, definitely feels colder than normal," you reply whilst rubbing your hands along your arms to warm them. 
+        "I thought Mother was supposed to kick the heating elements on <i>before</i> waking us."
+        <br /><br />
+        <div *ngIf="isJern">
+            Yessa pulls herself up and out of her cryopod.
+            As she stands her long, dark hair slides down her creamy chocolate skin to hang just below her butt in thick waves. 
+            She grimaces as her feet hit the cold decking. "Well, Jern," she says with a smile, "I think maybe you should prioritize fixing the goddamn heaters on this rust bucket."
+
+            <div class="video-links">
+                <h3>YOU REPLY,</h3>
+                <span *ngIf="baseChoices && !baseChoices[0].IsSet">
+                    <a (click)="setChoice(0, 0)"><div innerHtml="{{baseChoices[0].Options[0].Value}}"></div></a>
+                    or <br />
+                    <a (click)="setChoice(0, 1)" ><div innerHtml="{{baseChoices[0].Options[1].Value}}"></div></a>
+                </span>
+                <span *ngIf="baseChoices && baseChoices[0].IsSet">
+                    <i class="fas fa-check-square"></i>&nbsp;<div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></div>
+                    <br />
+                    <div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Response}}"></div>
+                </span>
+            </div>
+        </div>
+        <div *ngIf="!isJern">
+            "Yeah," Jern says with a heavy frown, "the heaters really should have kicked on before Mother woke us up from hypersleep."
+            He runs a hand through his short, curly black hair before dropping it onto the side of his cryopod and pushing himself up and out of it. 
+            As he gets to his feet he hops from one to other and exclaims, "Jesus-fuckin'-Christ, it's colder than a witch's tit in here!"
+
+            <div class="video-links">
+                <h3>YOU REPLY,</h3>
+                <span *ngIf="baseChoices && !baseChoices[0].IsSet">
+                    <a (click)="setChoice(0, 0)"><div innerHtml="{{baseChoices[0].Options[0].Value}}"></div></a>
+                    or <br />
+                    <a (click)="setChoice(0, 1)" ><div innerHtml="{{baseChoices[0].Options[1].Value}}"></div></a>
+                </span>
+                <span *ngIf="baseChoices && baseChoices[0].IsSet">
+                    <i class="fas fa-check-square"></i>&nbsp;<div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></div>"
+                    <br /><br />
+                    <div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Response}}"></div>
+                </span>
+            </div>
+        </div>
+        <div *ngIf="baseChoices && baseChoices[0].IsSet">
+            It doesn't take long for you and the rest of the crew to fully awaken. 
+            In short order everyone has gotten clean and dressed and made their way to the galley. 
+            Breakfast is some dried cornbread, peppered bacon, and a glass of Hydr8tion. 
+            While everyone eats, the general chit-chat you've come to associate with space truckers crews ensues. 
+            Apart from {{siblingName}}, you've never worked with the rest of the crew before, having been tossed together just before leaving Anchorpoint. 
+            <br /><br />
+            Initial introductions before heading into cryo had been brief, but it became quickly obvious that there was something between Captain Schmidt and Science Officer Van. 
+            During breakfast this idea seemed to get validated as you caught Schmidt trailing his fingers along Van's neck, arms, and wrists. 
+            Since she doesn't seem to mind, and in fact she seems to intentionally move into those tender caresses, you decide not to let it bother you either. 
+            Not to mention, Kole, a self-proclaimed bisexual, exhibitionist, and nymphomaniac drew yours, and {{siblingName}}'s, attention. 
+            <br /><br />
+            Aleena Kole is a skinny, pale-skinned, pale-haired woman with an excellent figure, which she showed off happily in the cryochamber and the showers, having slept in the nude. 
+            She has brilliant emerald green eyes that always sparkled with a sense of mischief. 
+            This morning she is wearing a skin-tight tank top, no bra mind you, and baggy jeans. 
+            Because the heaters are down, she's also wearing a thick work jacket to keep from shivering.
+            <br /><br />
+            Captain Gregory Schmidt is a short, portly man, not quite fat, but not exactly skinny either. 
+            Probably one too many Aspen Ale's in the past with not enough exercise. 
+            He has short, dishwater blonde hair that he keeps in a tiddy crew-cut, and his eyes are a dark blue, reminiscent to looking into the ocean's depths. 
+            Other than the attention he kept bestowing upon Van, he seemed to hold himself aloof from the rest of the crew. 
+            <br /><br />
+            Science Officer Paulette Van is a curvaceous middle-aged woman with shoulder length dark brown hair and matching dark brown eyes.
+            She is taller than Captain Schmidt by almost a foot, and her light tan skin, dark hair and dark eyes set her apart from both Kole and Schmidt as being exotic.
+            So far she seemed to be much more approachable than the captain, but only because she came across as shy instead of aloof.
+            <br /><br />
+            As though to be nearly the opposite of Scmidt and Van, Navigations Officer Robert Pho was a jovial, truly fat, man. 
+            He laughed often and loudly and was constantly trying to crack jokes and get others to join into his laughter. 
+            Being of some kind of Asian decent, he has short dark hair and light brown eyes and skin. 
+            He liked to boast about his skills, apparently he was an ex-USCMC officer who had served many missions in a variety of dangerous environments.
+            <br /><br />
+            <div *ngIf="isJern">
+                Then there's your sister, Navigations Officer Yessa Devash. Like you, her skin is a creamy chocolate color. 
+                She has long and thick, dark brown hair, which she is currently wearing braided after having showered and dressed. 
+                Her eyes were the color of fresh almonds. 
+                She went the route of piloting while you fell more into the maintenance side of things.
+                But it works out well, despite all of her teasing and eccentricities, you both are familiar and cordial enough with each other that you make a great team when serving on the same crew.
+            </div>
+            <div *ngIf="!isJern">
+                Then there's your brother, Chief Engineer Jern Devash. Like you, his skin is a creamy chocolate color.
+                He has short, dark curly hair and soft almond-colored eyes.
+                Unlike you, he seems to have little sense of humor, or at least one that was very different from your own.
+                But that's okay, because it is still fun to tease him constantly.
+                And despite your differences, you both still make a great team when working together on the same crew.
+            </div>
+            <br />
+            A light beeping noise echoes through the galley, drawing Schidt's attention. "That'll be Mother," he says, standing up. 
+            "Let's get on it people. Pho, Devash, er, Yessa, that is, hit up the nav-systems and confirm our location and trajectory. 
+            Jern, Kole go dig in and find out why the goddamn heating is out on this piece of shit.
+            Van, check on the Science Labs and MedLabs to make sure everything there is in order.
+            In the meantime, I'll check in on Mother and see what she has for us."
+
+            <div class="video-links">
+                <h3 class="expander" (click)="toggleNextChapter(1)">Close Prologue and Start Next Chapter</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h1 *ngIf="baseChoices && baseChoices[0].IsSet" class="expander" (click)="toggleShowSection(1)">Chapter One</h1>
+<div *ngIf="showChapterOne">
+    "Well, I guess it's time to get to work then," you say before finishing off your glass of Hydr8tion.
+    As everyone disperses to their various tasks, you take your food tray and glass, dropping them in the kitchen sink for someone else to take care of later.
+    You then turn to see {{(isJern ? 'Kole':'Pho')}} standing almost right behind you holding {{(isJern ? 'her':'his')}} tray waiting for you to move so {{(isJern ? 'she':'he')}} can drop it off.
+    <br /><br />
+    {{(isJern ? 'Kole':'Pho')}} chuckles, then says, "Dishes, eh? One-two-three, not it!"
+
+    <div class="video-links">
+        <h3>YOU REPLY,</h3>
+        <span *ngIf="baseChoices && !baseChoices[1].IsSet">
+            <a (click)="setChoice(1, 0)"><div innerHtml="{{baseChoices[1].Options[0].Value}}"></div></a>
+            or <br />
+            <a (click)="setChoice(1, 1)" ><div innerHtml="{{baseChoices[1].Options[1].Value}}"></div></a>
+        </span>
+        <span *ngIf="baseChoices && baseChoices[1].IsSet">
+            <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[1].Options[baseChoices[1].OptionSet].Value}}"></span>
+            <br /><br />
+            <div innerHtml="{{baseChoices[1].Options[baseChoices[1].OptionSet].Response}}"></div>
+        </span>
+    </div>
+
+    <div *ngIf="baseChoices[1].IsSet">
+
+        <div *ngIf="isJern">
+            You eventually make your way to the Maintenance Deck near the belly of the <span class="ship-name">Bronze Pilgrim</span>. 
+            The area is full of old clanging and dripping pipes, some clearly in need of replacement, but for whatever reason have yet to see that kind of attention. 
+            Kole strips off her work coat and toss it onto a crate against one wall and wipes some sweat off her forehead.
+            <br /><br />
+            "Good god, it's like a sauna down here," she says looking around. "Why is the rest of the ship so damn cold?"
+            <br /><br />
+            You realize that she is right. There seems to be a large amount of steam in the air the further into the small corridors you wind, as you venture closer to the heating elements. 
+            "Best guess is that we have a breached pipe somewhere which is what's causing all of this steam," you reply.
+            <br /><br />
+            The concept seems sounds, after all, this steam had to come from somewhere. 
+            The heating on the <span class="ship-name">Bronze Pilgrim</span> was created by pulling heat from the engines and the reactor and circling it through the cooling pipes that ran throughout the ship. 
+            As you think about that, you realize that this could be potentially catastrophic; if something has damaged the cooling system to the point where steam is leaking out this badly, the reactor or the engines could be heating up to critical levels. 
+            <br /><br />
+            You pause to think about the reprecussions of moving forward. 
+            If there is an issue with the cooling system, which seems likely, it will need to be patched sooner rather than later. 
+            However, that could also mean some kind of coolant or reactor leak, which could mean radiation exposure.
+            <br /><br />
+            Kole pauses a few steps ahead and turns to look back at you, her flaxen hair plastered to her face by her sweat. 
+            She pulls a rag out of her pocket and wipes at her face and neck to clear some of it away.
+            <br /><br />
+            "What's up, Devash?" she asks with a frown. "You seem pretty deep in thought over there; heat melting your brain?"
+            <br /><br />
+            You shake your head and relay the thoughts that have been running through your head about what could be causing this much steam.
+            <br /><br />
+            "Well shit," she says, turning to look ahead. "I think there are some Hazmat Suits near the <span class="place">Reactor</span>, but that means pushing closer to any potential radiation. 
+            However, I think we're supposed to have a <span class="item">Geiger Counter</span> back in the toolcage of the <span class="place">Maintenance Office</span>."
+            <br /><br />
+            She pulls a <span class="item">Maintenance Jack</span> from a loop on her leather toolbelt, which hugs her hips.
+            "What do you think, do we go back for a <span class="item">Geiger Counter</span> or move forward and try to fix the problem?"
+    
+            <div class="video-links">
+                <h3>YOU REPLY,</h3>
+                <span *ngIf="baseChoices && !baseChoices[2].IsSet">
+                    <a (click)="setChoice(2, 0)"><div innerHtml="{{baseChoices[2].Options[0].Value}}"></div></a>
+                    or <br />
+                    <a (click)="setChoice(2, 1)" ><div innerHtml="{{baseChoices[2].Options[1].Value}}"></div></a>
+                </span>
+                <span *ngIf="baseChoices && baseChoices[2].IsSet">
+                    <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[2].Options[baseChoices[2].OptionSet].Value}}"></span>
+                    <br /><br />
+                    <div innerHtml="{{baseChoices[2].Options[baseChoices[2].OptionSet].Response}}"></div>
+                </span>
+            </div>
+
+            <div *ngIf="baseChoices && baseChoices[2].IsSet">
+                <div *ngIf="baseChoices[2].OptionSet == 0">
+                    You move forward through the steam filled corridors, the heat increasing with every step.
+                    You wipe the sweat from your brow, for what feels like the hundredth time.
+                    Despite worries of radiation, you remove your jacket and hang it from a valve on a nearby pipe, the heat is that intense.
+                    <br /><br />
+                    <span class="ship-name">Jesus Christ</span>, you think to yourself, <span class="ship-name">Where it all of this fucking steam coming from. There</span> 
+                    has <span class="ship-name">to be a busted pipe somewhere near here.</span>
+                    <br /><br />
+                    The <span class="item">Maintenance Jack</span> feels slippery in your sweaty hands as you move forward, pausing occassionally to check on valves and pressure gauges.
+                    You've lost track of time as you've pushed your way further into the hot steam.
+                    It may have been minutes, but it feels like it has been hours since you sent Kole back for the Geiger Counter and moved forward.
+                    A hissing sound from up ahead catches your attention as you rest, crouched near the floor where it is a bit cooler.
+                    Looking up you gaze forward and see a plume of steam, spraying out of a pipe a few meters away.
+                    <br /><br />
+                    "'Bout fuckin' time," you mutter as you stand up and slog forward.
+                    <br /><br />
+                    The heat continues to increase to practically unbearable amounts, and you realize that if you spend too long trying to fix this problem that you will walk (hopefully!) out of here covered in second or third degree burns.
+                    Steeling yourself, you grit your teeth and dash through the spout of steam to the otherside.
+                    It slams into your back, scalding hot, ripping a cry of pain from you, but you made it beyond to where the valve is.
+                    <br /><br />
+                    You bring up the <span class="item">Maintenance Jack</span> and place it over the valve's notch and begin pushing with all of your might to shutter the valve. 
+                    It takes almost all of your strength you eventually get the valve to turn and within moments the spout of steam behind you sputters and stops. 
+                    You drop the <span class="item">Maintenance Jack</span> to the floor beside you as you sit down to catch your breath, careful not to lean your burn back against anything.
+                    <br /><br />
+                    It doesn't take long for the steam to begin to dissipate and the air around you to begin cooling. 
+                    You hear the pounding of footsteps coming down the corridor and look up to see Kole running towards you through the clearly steam, the Geiger Counter held in her left hand.
+                    <br /><br />
+                    "Hey, it looks like you stopped it!" she calls out as she comes to a stop next to you, crouching down to catch her breath. 
+                    Sweat drips down her body, her tank top is soaked with it, clinging tightly to her torso.
+                    Any other time and you might have enjoyed the view of her leaning over next to you, covered in sweat.
+                    Right now though, you're just glad the steam has stopped and hope your back isn't too badly burned.
+                    <br /><br />
+                    "Well, what's that thing telling you?" you ask her, pointing to the Geiger Counter.
+                    <br /><br />
+                    "Huh? Oh, yeah," she drops to her knees and brings up the counter, flipping a switch on the side. 
+                    It emits a low crackling noise for a moment then goes silent. 
+                    "Well, I'm no expert," she says staring at the needle, "but I think this says there is little to no radiation."
+                    <br /><br />
+                    "Thank God for that," you say with a smile.
+                    <br /><br />
+                    "Yeah," she says, pushing her hair out of her eyes. 
+                    "Sorry it took so long, I had to use a Cutting Torch to get into the toolcage since I don't have the keys, 
+                    and I didn't want to delay any longer than necessary waiting on Schmidt to wrap up with Mother."
+                    <br /><br />
+                    "No worries," you answer. "At least it turns out it wasn't needed."
+                    <br /><br />
+                    She snorts. "Yeah, waste of fucking time; I could've been here helping you. Alright, what's next? Find and fix the heaters?"
+
+                    <div class="video-links">
+                        <h3>YOU REPLY,</h3>
+                        <span *ngIf="baseChoices && !baseChoices[3].IsSet">
+                            <a (click)="setChoice(3, 0)"><div innerHtml="{{baseChoices[3].Options[0].Value}}"></div></a>
+                            or <br />
+                            <a (click)="setChoice(3, 1)" ><div innerHtml="{{baseChoices[3].Options[1].Value}}"></div></a>
+                        </span>
+                        <span *ngIf="baseChoices && baseChoices[3].IsSet">
+                            <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[3].Options[baseChoices[3].OptionSet].Value}}"></span>
+                            <br /><br />
+                            <div innerHtml="{{baseChoices[3].Options[baseChoices[3].OptionSet].Response}}"></div>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div *ngIf="baseChoices[2].OptionSet == 1">
+
+                </div>
+            </div>
+        
+        </div>
+
+        <div *ngIf="!isJern">
+            You and Pho reach the bridge. To the right is the entrance to MU/TH/UR, which is currently closed, you can just make out the blinking lights of the room beyond.
+            The bridge is fairly compact, though just large enough for a state-of-the-art Holotable to have been setup near the main bulkhead entrance.
+            Several blinking Access Terminals run along the port and starboard edges.
+            The bow of the Bridge has a large triple thick glass viewport that currently reveals a beautiful view of a sparkling blue-white planet that the ship is currently orbiting.
+            Beyond the planet is the system's star, a white-dwarf, which is fully in view, illuminating half of the planet below.
+            <br /><br />
+            "Sights like this are what make it all worthwhile," Pho says as he moves closer to the viewport, resting his left hand against the hull beside the viewport. 
+            "It is just breathtaking, new worlds, new sights." He shakes his head, then turns to smile back at you, though it doesn't seem to reach his eyes. 
+            "In the USCMC we only ever saw a sight like this before a mission, and that usually meant we were getting ready to blow the place to shit." 
+            He turns back to the view and continues, "It'll be nice to just be here to explore for once."
+            <br/ ><br />
+            You move up beside him to look out at the planet.
+            From the viewport it appears that the planet has no moons, or if it does, they're on the far side, blocked from sight by the planet itself.
+            The amount of white-blue covering everything in sight probably means that the planet is a giant frozen-over wasteland.
+            If there is land mass, it is either buried deep under glaciers or icy oceans.
+            Either way, it <span class="ship-name">is</span> a beautiful sight, the sparkling of the surface reflecting in the stars rays.
+            <br /><br />
+            "Yeah, it is definitely amazing to gaze upon a planet that no one else has before," you say as you gaze beyond. 
+            "Do you think there's air or life down there?"
+            <br /><br />
+            Pho smiles and turns to look back at the Bridge, which feels dark after staring out at the brilliant planet and its star. 
+            "Only one way to find out, yeah?" he says. "Pilot's choice, do you want to check the <span class="item">NavComputer</span> and see exactly where we are, 
+            or do you want to run scans on our pale blue orb out there with that fancy-ass <span class="item">Holotable</span>?""
+            <div class="video-links">
+                <h3>YOU REPLY,</h3>
+                <span *ngIf="baseChoices && !baseChoices[2].IsSet">
+                    <a (click)="setChoice(2, 0)"><div innerHtml="{{baseChoices[2].Options[0].Value}}"></div></a>
+                    or <br />
+                    <a (click)="setChoice(2, 1)" ><div innerHtml="{{baseChoices[2].Options[1].Value}}"></div></a>
+                </span>
+                <span *ngIf="baseChoices && baseChoices[2].IsSet">
+                    <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[2].Options[baseChoices[2].OptionSet].Value}}"></span>
+                    <br /><br />
+                    <div innerHtml="{{baseChoices[2].Options[baseChoices[2].OptionSet].Response}}"></div>
+                </span>
+            </div>
+
+            <div *ngIf="baseChoices && baseChoices[2].IsSet">
+                <div *ngIf="baseChoices[2].OptionSet == 0">
+
+                </div>
+                <div *ngIf="baseChoices[2].OptionSet == 1">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<br /><br />

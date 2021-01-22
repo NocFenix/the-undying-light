@@ -19,6 +19,8 @@ export class CampaignService {
         return ' | <i class="fas fa-moon"></i> Luna Umbra';
       case 'ferro-outpost':
         return ' | <i class="fas fa-parachute-box"></i> Ferro Outpost (Cinematic)';
+      case 'dark-edge':
+        return ' | <i class="fas fa-user-astronaut"></i> Dark Edge of Space (Story)'
       default:
         return null;
     }
@@ -34,8 +36,19 @@ export class CampaignService {
         return false;
       case 'ferro-outpost':
         return false;
+      case 'dark-edge':
+        return false;
       default:
-        return null;
+        return false;
+    }
+  }
+
+  public getIsStory(campaignUrl:string):boolean {
+    switch (campaignUrl) {
+      case 'dark-edge':
+        return true;
+      default:
+        return false;
     }
   }
 
