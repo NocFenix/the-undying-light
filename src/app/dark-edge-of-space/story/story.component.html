@@ -69,8 +69,8 @@
                     <a (click)="setChoice(0, 1)" ><div innerHtml="{{baseChoices[0].Options[1].Value}}"></div></a>
                 </span>
                 <span *ngIf="baseChoices && baseChoices[0].IsSet">
-                    <i class="fas fa-check-square"></i>&nbsp;<div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></div>
-                    <br />
+                    <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></span>
+                    <br /><br />
                     <div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Response}}"></div>
                 </span>
             </div>
@@ -88,7 +88,7 @@
                     <a (click)="setChoice(0, 1)" ><div innerHtml="{{baseChoices[0].Options[1].Value}}"></div></a>
                 </span>
                 <span *ngIf="baseChoices && baseChoices[0].IsSet">
-                    <i class="fas fa-check-square"></i>&nbsp;<div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></div>"
+                    <i class="fas fa-check-square"></i>&nbsp;<span innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Value}}"></span>
                     <br /><br />
                     <div innerHtml="{{baseChoices[0].Options[baseChoices[0].OptionSet].Response}}"></div>
                 </span>
@@ -304,8 +304,8 @@
             "Sights like this are what make it all worthwhile," Pho says as he moves closer to the viewport, resting his left hand against the hull beside the viewport. 
             "It is just breathtaking, new worlds, new sights." He shakes his head, then turns to smile back at you, though it doesn't seem to reach his eyes. 
             "In the USCMC we only ever saw a sight like this before a mission, and that usually meant we were getting ready to blow the place to shit." 
-            He turns back to the view and continues, "It'll be nice to just be here to explore for once."
-            <br/ ><br />
+            He turns back to the view and continues, "It'll be nice to just be here to explore for once." 
+            <br /><br />
             You move up beside him to look out at the planet.
             From the viewport it appears that the planet has no moons, or if it does, they're on the far side, blocked from sight by the planet itself.
             The amount of white-blue covering everything in sight probably means that the planet is a giant frozen-over wasteland.

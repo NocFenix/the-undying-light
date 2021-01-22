@@ -214,12 +214,12 @@ export class StoryChoiceService {
             Options: [
                 {
                     Option: 0,
-                    Value: `"Well, I <i>am</i> the ship's Pilot, so I may as well confirm our location. I'll take the <span class="Item">NavComputer</span>, and you can scan the planet."`,
+                    Value: `"Well, I <i>am</i> the ship's Pilot, so I may as well confirm our location. I'll take the <span class="item">NavComputer</span>, and you can scan the planet."`,
                     Response: ``
                 },
                 {
                     Option: 1,
-                    Value: `"Hell yeah! I'm gonna check out that fancy piece of tech. I get the <span class="Item">Holotable</span>, and you can check the NavComputer."`,
+                    Value: `"Hell yeah! I'm gonna check out that fancy piece of tech. I get the <span class="item">Holotable</span>, and you can check the NavComputer."`,
                     Response: ``
                 }
             ]
